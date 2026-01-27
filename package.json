@@ -13,7 +13,7 @@
     "type": "git",
     "url": "git+https://github.com/Mephisto5558/GSO_OSP_Hilfsgueterlogistik.git"
   },
-  "license": "",
+  "license": "MIT",
   "author": "GSO FIA3D OSP Team 1",
   "type": "module",
   "main": "dist/index.js",
