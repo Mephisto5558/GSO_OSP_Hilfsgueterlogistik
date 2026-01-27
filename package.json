@@ -24,7 +24,7 @@
   "devDependencies": {
     "@mephisto5558/better-types": "latest",
     "@mephisto5558/eslint-config": "latest",
-    "@types/node": "^24.13.0"
+    "@types/node": "^25.0.10"
   },
   "engines": {
     "node": ">=24.13.0"
