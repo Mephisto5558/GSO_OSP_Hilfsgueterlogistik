@@ -25,6 +25,7 @@
 - [ ] My pull request does not contain unrelated changes (relay these to another pull request)
 - [ ] I have verified that I did not commit unnecessary files (e.g., debug logs, temp files).
 - [ ] I have performed a self-review of my own code and diff.
+- [ ] I have verified that all code, code comments and documentation is written in english.
 - [ ] **I have added exhaustive unit tests for my changes.**
 - [ ] **All unit tests (new and existing) pass locally.**
 - [ ] I have commented my code, particularly in hard-to-understand areas.
