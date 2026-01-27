@@ -1,0 +1,32 @@
+{
+  "name": "gso_osp_hilfsgueterlogistik",
+  "version": "0.0.0",
+  "description": "Hilfsgueterlogistik-Verwaltung ueber eine Weboberflaeche",
+  "keywords": [
+    "logistics"
+  ],
+  "homepage": "https://github.com/Mephisto5558/GSO_OSP_Hilfsgueterlogistik#readme",
+  "bugs": {
+    "url": "https://github.com/Mephisto5558/GSO_OSP_Hilfsgueterlogistik/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mephisto5558/GSO_OSP_Hilfsgueterlogistik.git"
+  },
+  "license": "",
+  "author": "GSO FIA3D OSP Team 1",
+  "type": "module",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@mephisto5558/better-types": "latest",
+    "@mephisto5558/eslint-config": "latest",
+    "@types/node": "^24.13.0"
+  },
+  "engines": {
+    "node": ">=24.13.0"
+  }
+}
