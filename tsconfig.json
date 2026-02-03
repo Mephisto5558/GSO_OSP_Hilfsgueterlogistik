@@ -1,24 +1,12 @@
 {
-  "exclude": [
-    "dist",
-    "node_modules"
-  ],
-  "compilerOptions": {
-    "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "target": "esnext",
-    "lib": [
-      "ESNext"
-    ],
-    "allowJs": false,
-    "declaration": true,
-    "exactOptionalPropertyTypes": true,
-    "libReplacement": true,
-    "noImplicitOverride": true,
-    "noUncheckedIndexedAccess": true,
-    "noUncheckedSideEffectImports": true,
-    "outDir": "dist",
-    "skipLibCheck": true,
-    "strict": true
-  }
+  // This is a "solution-style" tsconfig.json file.
+  // Instead of specifying any files, it just references all the actual projects.
+  // See https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-7.html#searching-ancestor-configuration-files-for-project-ownership
+  "files": [],
+  "exclude": [ "dist", "node_modules" ],
+  "references": [
+    { "path": "./src/shared" },
+    { "path": "./src/backend" },
+    { "path": "./src/frontend" }
+  ]
 }

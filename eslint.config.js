@@ -8,6 +8,41 @@ import config, { getModifiedRule, plugins } from '@mephisto5558/eslint-config';
 export default [
   ...config,
   {
+    name: 'project-file:base',
+    languageOptions: {
+      parserOptions: {
+        project: './tsconfig.base.json'
+      }
+    }
+  },
+  {
+    name: 'project-file:backend',
+    files: ['src/backend/**'],
+    languageOptions: {
+      parserOptions: {
+        project: './src/backend/tsconfig.json'
+      }
+    }
+  },
+  {
+    name: 'project-file:frontend',
+    files: ['src/frontend/**'],
+    languageOptions: {
+      parserOptions: {
+        project: './src/frontend/tsconfig.json'
+      }
+    }
+  },
+  {
+    name: 'project-file:shared',
+    files: ['src/shared/**'],
+    languageOptions: {
+      parserOptions: {
+        project: './src/shared/tsconfig.json'
+      }
+    }
+  },
+  {
     name: 'project-overwrites',
     rules: {
       '@stylistic/max-len': getModifiedRule(config, '@stylistic/max-len', {
