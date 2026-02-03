@@ -1,4 +1,4 @@
-name: Build and Commit Dist
+name: Build and Deploy to Release Branch
 
 on:
   push:
@@ -12,7 +12,7 @@ permissions:
 
 jobs:
   build-and-commit:
-    name: Build and Commit Dist
+    name: Build and Commit to Release Branch
     runs-on: ubuntu-latest
 
     # skip if the commit was made by this action
@@ -43,7 +43,7 @@ jobs:
           git add -f dist
           if ! git diff --staged --quiet; then
             git commit -m "build: Generate distributable files [skip ci]"
-            git push
+            git push --force origin HEAD:release
           else
             echo "No changes to commit."
           fi
