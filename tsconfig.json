@@ -3,11 +3,10 @@
   // Instead of specifying any files, it just references all the actual projects.
   // See https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-7.html#searching-ancestor-configuration-files-for-project-ownership
   "files": [],
-  "exclude": [ "dist", "node_modules" ],
+  "exclude": ["dist", "node_modules"],
   "references": [
     { "path": "./src/shared" },
     { "path": "./src/backend" },
-    { "path": "./src/frontend" },
-    { "path": "./tsconfig.node.json" }
+    { "path": "./src/frontend" }
   ]
 }
