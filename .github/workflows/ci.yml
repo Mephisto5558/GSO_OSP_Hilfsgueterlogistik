@@ -34,7 +34,7 @@ jobs:
       - name: Upload analysis results to GitHub
         # Always run this step to upload the report, even if the lint step fails
         if: always()
-        uses: github/codeql-action/upload-sarif@v3
+        uses: github/codeql-action/upload-sarif@v4
         with:
           sarif_file: eslint-results.sarif
           wait-for-processing: true
