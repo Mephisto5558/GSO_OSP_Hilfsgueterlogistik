@@ -16,7 +16,7 @@ export default [
     }
   },
   {
-    name: 'project-file:frontend',
+    name: 'project-file:backend',
     files: ['src/backend/**'],
     languageOptions: {
       parserOptions: {
@@ -25,7 +25,7 @@ export default [
     }
   },
   {
-    name: 'project-file:backend',
+    name: 'project-file:frontend',
     files: ['src/frontend/**'],
     languageOptions: {
       parserOptions: {
