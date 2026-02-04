@@ -1,5 +1,6 @@
 ## Jira Reference
 <!-- Please link the Jira ticket here. Example: [PROJ-123](https://your-jira.atlassian.net/browse/PROJ-123) -->
+<!-- If no ticket exists, create one. -->
 * Ticket Link: [TICKET-ID]
 
 ## Summary of Changes
@@ -12,25 +13,29 @@
 - [ ] New Feature (Non-breaking change which adds functionality)
 - [ ] Refactoring (Code improvement without changing functionality)
 - [ ] Documentation (Update to Readme, comments, etc.)
-- [ ] Breaking Change (Fix or feature that would cause existing functionality to not work as expected)
+- [ ] **Breaking Change** (Fix or feature that would cause existing functionality to not work as expected)
 
 ## Screenshots / Videos (Optional)
 <!-- If UI changes were made, please attach screenshots or videos here -->
 
 
 ## Checklist
-<!-- ⚠️ IMPORTANT: PRs without unit tests or with failing tests will NOT be accepted! -->
-<!-- Please go through this list before creating the PR -->
-- [ ] My code follows the project's style guidelines.
-- [ ] My pull request does not contain unrelated changes (relay these to another pull request)
-- [ ] I have verified that I did not commit unnecessary files (e.g., debug logs, temp files).
-- [ ] I have performed a self-review of my own code and diff.
-- [ ] I have verified that all code, code comments and documentation is written in English.
-- [ ] **I have added exhaustive unit tests for my changes.**
-- [ ] **All unit tests (new and existing) pass locally.**
-- [ ] I have commented my code, particularly in hard-to-understand areas.
-- [ ] I have reviewed and updated any related documentation.
-- [ ] I have updated the Jira ticket status.
+<!-- ⚠️ IMPORTANT: PRs without unit tests, with failing tests or failing builds will NOT be accepted! -->
+<!-- Please go through this list before requesting a review -->
+#### Code & Scope
+- [ ] I have performed a self-review of the code and diff.
+- [ ] The code adheres to the project's style guidelines (`eslint .` reports no new issues).
+- [ ] This PR contains only related changes; unrelated changes are in a separate PR.
+- [ ] Unnecessary files (e.g., debug logs, temp files, **dist** directory) have not been committed.
+- [ ] All code, comments, documentation, and commit messages are written in English.
+- [ ] The code is commented, especially in complex or hard-to-understand areas.
+#### Testing & Build
+- [ ] Comprehensive unit tests have been added for the changes. (_If applicable_)
+- [ ] All unit tests (new and existing) pass locally.
+- [ ] The project builds successfully without errors (`npm run build`).
+#### Documentation & Process
+- [ ] Relevant documentation has been reviewed and updated.
+- [ ] The corresponding Jira ticket has been updated and will be updated again after this PR is merged.
 
 ## Testing Instructions
 <!-- How can the reviewer test your changes manually? -->
