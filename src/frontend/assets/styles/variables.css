@@ -1,0 +1,27 @@
+html {
+  --color-bg: var(--color-secondary);
+  --color-fg: var(--color-primary);
+  --color-bg-button: var(--color-secondary);
+  --color-fg-button: var(--color-primary);
+  --color-bg-navbar-item: var(--color-secondary);
+  --color-fg-navbar-item: var(--color-primary);
+  --color-navbar-item-hover: #555;
+  --color-bg-dropdown-item: var(--color-secondary);
+  --color-fg-dropdown-item: var(--color-primary);
+  --color-dropdown-item-hover: #555;
+  --color-bg-form-element: #1f1f1f;
+  --color-fg-form-element: var(--color-primary);
+  --color-hyperlink: var(--color-primary);
+
+  &[data-theme='light'] {
+    --color-primary: rgb(18, 18, 18);
+    --color-secondary: rgb(241, 241, 241);
+    --color-navbar-item-hover: #fff;
+    --color-bg-form-element: lightgray;
+  }
+
+  &[data-theme='dark'] {
+    --color-primary: rgb(241, 241, 241);
+    --color-secondary: rgb(18, 18, 18);
+  }
+}
