@@ -19,7 +19,7 @@
   "main": "dist/backend/index.js",
   "types": "dist/backend/index.d.ts",
   "scripts": {
-    "build": "npm run clean && tsc --build && vite build",
+    "build": "npm run clean && tsc --build src/frontend src/backend && vite build",
     "build:backend": "tsc --build src/backend",
     "build:frontend": "tsc --build src/frontend && vite build",
     "clean": "rimraf dist",
@@ -35,6 +35,7 @@
     "@microsoft/eslint-formatter-sarif": "latest",
     "@types/node": "24.x",
     "concurrently": "latest",
+    "esbuild": "latest",
     "rimraf": "latest",
     "typescript": "latest",
     "vite": "7.3.x",
