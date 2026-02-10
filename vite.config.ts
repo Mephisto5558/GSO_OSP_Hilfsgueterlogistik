@@ -1,9 +1,13 @@
+/* eslint-disable-next-line @typescript-eslint/triple-slash-reference -- https://vitest.dev/guide/#configuring-vitest */
+/// <reference types="vitest/config" />
+
 import { readdirSync } from 'node:fs';
 import { extname, join, relative, resolve } from 'node:path';
 import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 const
+  REQUIRED_COVERAGE = 80,
   rootForBuild = resolve(import.meta.dirname, 'src/frontend'),
   pagesDir = resolve(rootForBuild, 'pages'),
 
@@ -22,8 +26,28 @@ export default defineConfig(({ command }) => ({
   plugins: [tsconfigPaths()],
   resolve: {
     alias: {
+      '@': resolve(import.meta.dirname, 'src'),
       '/styles': resolve(rootForBuild, 'styles'),
       '/scripts': resolve(rootForBuild, 'scripts')
+    }
+  },
+  test: {
+    environmentMatchGlobs: [
+      ['tests/frontend/**', 'jsdom'],
+      ['tests/backend/**', 'node']
+    ],
+    include: ['tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    coverage: {
+      provider: 'istanbul',
+      reporter: ['text', 'json', 'html'],
+      include: ['src/**'],
+      exclude: [],
+      thresholds: {
+        statements: REQUIRED_COVERAGE,
+        branches: REQUIRED_COVERAGE,
+        functions: REQUIRED_COVERAGE,
+        lines: REQUIRED_COVERAGE
+      }
     }
   },
   build: {
