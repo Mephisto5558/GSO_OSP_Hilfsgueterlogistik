@@ -43,6 +43,7 @@
     "@vitest/coverage-istanbul": "4.0.x",
     "concurrently": "latest",
     "esbuild": "latest",
+    "jsdom": "28.x",
     "rimraf": "latest",
     "typescript": "latest",
     "vite": "7.3.x",

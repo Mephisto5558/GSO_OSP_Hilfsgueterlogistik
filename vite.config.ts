@@ -32,6 +32,7 @@ export default defineConfig(({ command }) => ({
     }
   },
   test: {
+    root: resolve(import.meta.dirname),
     environmentMatchGlobs: [
       ['tests/frontend/**', 'jsdom'],
       ['tests/backend/**', 'node']
@@ -41,7 +42,7 @@ export default defineConfig(({ command }) => ({
       provider: 'istanbul',
       reporter: ['text', 'json', 'html'],
       include: ['src/**'],
-      exclude: [],
+      exclude: ['tests/**'],
       thresholds: {
         statements: REQUIRED_COVERAGE,
         branches: REQUIRED_COVERAGE,

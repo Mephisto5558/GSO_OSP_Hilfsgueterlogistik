@@ -8,6 +8,7 @@
     { "path": "./src/shared" },
     { "path": "./src/backend" },
     { "path": "./src/frontend" },
-    { "path": "./tsconfig.node.json" }
+    { "path": "./tsconfig.node.json" },
+    { "path": "./tests" }
   ]
 }
