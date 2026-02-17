@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en' data-theme='light'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel='stylesheet' href='/styles/base.css'>
+  <title>User Management - Emergency Supply System</title>
+</head>
+<body>
+  <header id='page-header'>
+    <a href='/'><img id='logo' src='../logo.png'></a>
+	<form id='search-form' method='post'>
+		<input type='text' id='query' placeholder='Search' />
+		<button id='search-button'>⌕</button>
+	</form>
+	<div id='actions'>
+		<a href='show'><button id='new-user'>New User</button></a>
+	</div>
+	<button id='menu-button'>≡</button>
+	<div id='menu' class='menu hidden'>
+		<a href='#'>Home</a>
+		<a href='#'>About</a>
+		<a href='#'>Contact</a>
+	</div>
+  </header>
+  <div id='page-content'>
+    <table id='list-item'>
+		<caption>
+			User Management
+		</caption>
+		<thead>
+			<tr>
+				<th scope="col">ID</th>
+				<th scope="col">Username</th>
+				<th scope="col">Roles</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope="row">1</th>
+				<td>Peter Pan</td>
+				<td>Admin</td>
+			</tr>
+			<tr>
+				<th scope="row">2</th>
+				<td>Astro Boy</td>
+				<td>User</td>
+			</tr>
+		</tbody>
+	</table>
+  </div>
+</body>
+<script>
+	document.getElementById('menu-button').addEventListener('click', function() {
+		document.getElementById('menu').classList.toggle('hidden');
+	});
+</script>
+</html>
