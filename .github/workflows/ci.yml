@@ -21,7 +21,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup Environment
-        uses: ./.github/actions/setup
+        uses: ./.github/workflows
 
       - name: Run ESLint
         run: npm run lint:ci
@@ -43,14 +43,14 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup Environment
-        uses: ./.github/actions/setup
+        uses: ./.github/workflows
 
       - name: Run Tests
         run: npm run test:coverage
 
       - name: Add coverage comment to PR
         if: github.event_name == 'pull_request'
-        uses: davelosert/vitest-coverage-report@v2
+        uses: davelosert/vitest-coverage-report-action@v2
         with:
           json-summary-path: ./coverage/coverage-summary.json
 
@@ -63,7 +63,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup Environment
-        uses: ./.github/actions/setup
+        uses: ./.github/workflows
 
       - name: Build backend project
         run: npm run build:backend
@@ -77,7 +77,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup Environment
-        uses: ./.github/actions/setup
+        uses: ./.github/workflows
 
       - name: Build frontend project
         run: npm run build:frontend
