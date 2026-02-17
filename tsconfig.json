@@ -1,14 +1,14 @@
 {
-  // This is a "solution-style" tsconfig.json file.
-  // Instead of specifying any files, it just references all the actual projects.
-  // See https://www.typescriptlang.org/docs/handbook/release-notes/typescript-5-7.html#searching-ancestor-configuration-files-for-project-ownership
-  "files": [],
+  "extends": "./tsconfig.base.json",
+  "include": ["vite.config.ts"],
   "exclude": ["dist", "node_modules"],
+  "compilerOptions": {
+    "noEmit": true,
+    "types": ["node"]
+  },
   "references": [
     { "path": "./src/shared" },
     { "path": "./src/backend" },
-    { "path": "./src/frontend" },
-    { "path": "./tsconfig.node.json" },
-    { "path": "./tests" }
+    { "path": "./src/frontend" }
   ]
 }
