@@ -46,18 +46,12 @@ export default [
     }
   },
   {
-    name: 'tests:base',
-    files: ['tests/**'],
-    languageOptions: {
-      parserOptions: {
-        project: './tests/tsconfig.json'
-      }
-    }
-  },
-  {
     name: 'tests:frontend',
     files: ['tests/frontend/**'],
     languageOptions: {
+      parserOptions: {
+        project: './tests/frontend/tsconfig.json'
+      },
       globals: {
         ...globals.browser
       }
@@ -67,7 +61,19 @@ export default [
     name: 'tests:backend',
     files: ['tests/backend/**'],
     languageOptions: {
+      parserOptions: {
+        project: './tests/backend/tsconfig.json'
+      },
       globals: globals.node
+    }
+  },
+  {
+    name: 'tests:shared',
+    files: ['tests/shared/**'],
+    languageOptions: {
+      parserOptions: {
+        project: './tests/shared/tsconfig.json'
+      }
     }
   },
   {

@@ -9,6 +9,9 @@
   "references": [
     { "path": "./src/shared" },
     { "path": "./src/backend" },
-    { "path": "./src/frontend" }
+    { "path": "./src/frontend" },
+    { "path": "./tests/shared" },
+    { "path": "./tests/backend" },
+    { "path": "./tests/frontend" }
   ]
 }

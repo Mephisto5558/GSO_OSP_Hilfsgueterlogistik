@@ -18,38 +18,48 @@ const
   input = Object.fromEntries(findHtmlEntryPoints(pagesDir).map(file => [
     relative(pagesDir, file.slice(0, -extname(file).length)).replaceAll('\\', '/'),
     file
-  ]));
+  ])),
+
+  alias = {
+    '@': resolve(import.meta.dirname, 'src'),
+    '/styles': resolve(rootForBuild, 'styles'),
+    '/scripts': resolve(rootForBuild, 'scripts')
+  };
 
 export default defineConfig(({ command }) => ({
   root: command === 'serve' ? pagesDir : rootForBuild,
   publicDir: resolve(rootForBuild, 'assets'),
   plugins: [tsconfigPaths()],
-  resolve: {
-    alias: {
-      '@': resolve(import.meta.dirname, 'src'),
-      '/styles': resolve(rootForBuild, 'styles'),
-      '/scripts': resolve(rootForBuild, 'scripts')
-    }
-  },
+  resolve: { alias },
   test: {
     root: resolve(import.meta.dirname),
-    environmentMatchGlobs: [
-      ['tests/frontend/**', 'jsdom'],
-      ['tests/backend/**', 'node']
-    ],
-    include: ['tests/**/*.{test,spec}.{js,mjs,cjs,ts,mts,cts,jsx,tsx}'],
+    css: false,
     coverage: {
       provider: 'istanbul',
       reporter: ['text', 'json', 'html'],
-      include: ['src/**'],
-      exclude: ['tests/**'],
       thresholds: {
         statements: REQUIRED_COVERAGE,
         branches: REQUIRED_COVERAGE,
         functions: REQUIRED_COVERAGE,
         lines: REQUIRED_COVERAGE
       }
-    }
+    },
+    projects: [
+      {
+        resolve: { alias },
+        test: {
+          environment: 'jsdom',
+          include: ['**/tests/frontend/**/*.test.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
+        }
+      },
+      {
+        resolve: { alias },
+        test: {
+          environment: 'node',
+          include: ['**/tests/backend/**/*.test.{js,mjs,cjs,ts,mts,cts,jsx,tsx}']
+        }
+      }
+    ]
   },
   build: {
     outDir: resolve(import.meta.dirname, 'dist/frontend'),
