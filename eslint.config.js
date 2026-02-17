@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-magic-numbers */
 
-import config, { getModifiedRule, plugins } from '@mephisto5558/eslint-config';
+import config, { getModifiedRule, globals, plugins } from '@mephisto5558/eslint-config';
 
 /**
  * @type {typeof config}
@@ -19,6 +19,7 @@ export default [
     name: 'project-file:backend',
     files: ['src/backend/**'],
     languageOptions: {
+      globals: globals.node,
       parserOptions: {
         project: './src/backend/tsconfig.json'
       }
@@ -28,6 +29,7 @@ export default [
     name: 'project-file:frontend',
     files: ['src/frontend/**'],
     languageOptions: {
+      globals: globals.browser,
       parserOptions: {
         project: './src/frontend/tsconfig.json'
       }
@@ -37,8 +39,40 @@ export default [
     name: 'project-file:shared',
     files: ['src/shared/**'],
     languageOptions: {
+      globals: {},
       parserOptions: {
         project: './src/shared/tsconfig.json'
+      }
+    }
+  },
+  {
+    name: 'tests:frontend',
+    files: ['tests/frontend/**'],
+    languageOptions: {
+      parserOptions: {
+        project: './tests/frontend/tsconfig.json'
+      },
+      globals: {
+        ...globals.browser
+      }
+    }
+  },
+  {
+    name: 'tests:backend',
+    files: ['tests/backend/**'],
+    languageOptions: {
+      parserOptions: {
+        project: './tests/backend/tsconfig.json'
+      },
+      globals: globals.node
+    }
+  },
+  {
+    name: 'tests:shared',
+    files: ['tests/shared/**'],
+    languageOptions: {
+      parserOptions: {
+        project: './tests/shared/tsconfig.json'
       }
     }
   },

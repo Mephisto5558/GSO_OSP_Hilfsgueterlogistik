@@ -31,7 +31,7 @@
 - [ ] The code is commented, especially in complex or hard-to-understand areas.
 #### Testing & Build
 - [ ] Comprehensive unit tests have been added for the changes. (_If applicable_)
-- [ ] All unit tests (new and existing) pass locally.
+- [ ] All unit tests (new and existing) pass locally (`npm run test`).
 - [ ] The project builds successfully without errors (`npm run build`).
 #### Documentation & Process
 - [ ] Relevant documentation has been reviewed and updated.
