@@ -36,7 +36,7 @@ export default defineConfig(({ command }) => ({
     css: false,
     coverage: {
       provider: 'istanbul',
-      reporter: ['text', 'json', 'html'],
+      reporter: ['text', 'json', 'json-summary', 'html'],
       thresholds: {
         statements: REQUIRED_COVERAGE,
         branches: REQUIRED_COVERAGE,
