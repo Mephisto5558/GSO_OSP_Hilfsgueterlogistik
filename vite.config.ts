@@ -27,7 +27,7 @@ export default defineConfig(({ command }) => ({
     }
   },
   build: {
-    outDir: '../../../dist/frontend',
+    outDir: resolve(import.meta.dirname, 'dist/frontend'),
     sourcemap: true,
     emptyOutDir: true,
     minify: 'esbuild',
