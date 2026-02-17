@@ -116,32 +116,33 @@ button:focus {
   }
 
   #actions {
-    margin-left: auto;
+    margin-inline-start: auto;
+  }
 
-    #menu {
-      top: 100%;
-      left: 0;
-      position: absolute;
-      background: white;
-      border: 1px solid #ccc;
-      padding: 10px;
-    }
-    #menu:not(.hidden) {
-      display: flex;
-      flex-direction: column;
-    }
+  #menu {
+    inset-block-start: 70px;
+    inset-inline-end: 0.5%;
+    position: absolute;
+    background: white;
+    border: 1px solid #ccc;
+    padding: 10px;
+    gap: 0.5rem;
+  }
+  #menu:not(.hidden) {
+    display: flex;
+    flex-direction: column;
   }
 }
 
 #list-item {
-  width: 100%;
+  inline-size: 95%;
   border: 1px solid black;
 
   caption {
     text-align: left;
     font-weight: bold;
     font-size: 24px;
-    margin-left: 1rem;
+    margin-inline-start: 1rem;
   }
 }
 
