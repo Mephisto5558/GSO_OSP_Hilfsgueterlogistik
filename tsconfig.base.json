@@ -5,7 +5,6 @@
     "declaration": true,
     "exactOptionalPropertyTypes": true,
     "forceConsistentCasingInFileNames": true,
-    "ignoreDeprecations": "6.0", // to ignore deprecation of `baseUrl` as there is no good other way
     "module": "NodeNext",
     "moduleResolution": "NodeNext",
     "noImplicitOverride": true,
