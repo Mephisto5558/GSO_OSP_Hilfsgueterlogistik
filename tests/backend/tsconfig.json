@@ -3,8 +3,6 @@
   "include": ["."],
   "compilerOptions": {
     "lib": ["ESNext"],
-    "outDir": "../../dist/backend",
-    "types": ["node"]
-  },
-  "references": [{ "path": "../shared" }]
+    "types": ["node", "vitest/globals"]
+  }
 }
