@@ -26,22 +26,29 @@
     "lint": "eslint .",
     "lint:ci": "eslint . --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif",
     "start": "node dist/backend/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "vitest",
+    "test:coverage": "vitest run --coverage",
     "watch": "conc -n \"TSC,VITE\" -c \"blue,magenta\" --pad-prefix \"npm:watch:backend\" \"npm:watch:frontend\"",
     "watch:backend": "npm run build:backend -- --watch --preserveWatchOutput",
     "watch:frontend": "vite"
+  },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@mephisto5558/better-types": "latest",
     "@mephisto5558/eslint-config": "latest",
     "@microsoft/eslint-formatter-sarif": "latest",
     "@types/node": "24.x",
+    "@vitest/coverage-istanbul": "4.0.x",
     "concurrently": "latest",
     "esbuild": "latest",
+    "jsdom": "28.x",
     "rimraf": "latest",
     "typescript": "latest",
     "vite": "7.3.x",
-    "vite-tsconfig-paths": "6.x"
+    "vite-tsconfig-paths": "6.x",
+    "vitest": "4.0.x"
   },
   "engines": {
     "node": ">=24.13.0"
