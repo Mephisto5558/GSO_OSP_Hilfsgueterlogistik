@@ -1,0 +1,49 @@
+#page-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+#new-user-form {
+  font-size: 2rem;
+  margin-block-start: 1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 10px;
+  inline-size: 75%;
+}
+
+#new-user-form div {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  input {
+    padding: 1.5rem 0.5rem;
+    font-size: 2rem;
+  }
+}
+
+#buttons {
+  flex-wrap: wrap;
+  display: flex;
+  gap: 10px;
+
+  #save-button {
+    flex-grow: 1;
+  }
+
+  #delete-button, #cancel-button {
+    inline-size: 49.5%;
+  }
+}
+
+#buttons button {
+  font-size: 2rem;
+  inline-size: 100%;
+  padding: 1.5rem 0.5rem;
+}
+
+input {
+  inline-size: 70%;
+}

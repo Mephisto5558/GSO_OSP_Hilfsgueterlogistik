@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang='en' data-theme='light'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel='stylesheet' href='/styles/base.css'>
+	<link rel='stylesheet' href='/styles/show-users.css'>
+  <title>User Detail - Emergency Supply System</title>
+</head>
+<body>
+  <header id='page-header'>
+    <a href='/'><img id='logo' src='../logo.png'></a>
+	<div id="actions">
+		<a href='show'><button id='new-user'>New User</button></a>
+	</div>
+	<button id="menu-button">≡</button>
+	<div id="menu" class="menu hidden">
+		<a href="#">Home</a>
+		<a href="#">About</a>
+		<a href="#">Contact</a>
+	</div>
+  </header>
+  <div id='page-content'>
+    <form id='new-user-form' method='post'>
+      <div class='form-entry'>
+        <label for='username'>Username:</label>
+        <input type='text' id='username' placeholder='Enter username...' required/>
+      </div>
+      <div class='form-entry'>
+        <label for='password'>Password:</label>
+        <input type='password' id='password' placeholder='Enter password...' required/>
+      </div>
+      <div id='buttons'>
+        <button id='save-button'>Save</button>
+        <button id='delete-button'>Delete</button>
+        <button id='cancel-button'>Cancel</button>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+	document.getElementById('menu-button').addEventListener('click', function() {
+		document.getElementById('menu').classList.toggle('hidden');
+	});
+</script>
+</html>
