@@ -47,6 +47,9 @@ export default [
     rules: {
       '@stylistic/max-len': getModifiedRule(config, '@stylistic/max-len', {
         code: 120
+      }),
+      'custom/prefer-ternary': getModifiedRule(config, 'custom/prefer-ternary', undefined, {
+        maxLength: 120
       })
     },
     plugins
