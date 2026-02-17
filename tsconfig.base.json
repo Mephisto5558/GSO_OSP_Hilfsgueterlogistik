@@ -10,7 +10,7 @@
     "noImplicitOverride": true,
     "noUncheckedIndexedAccess": true,
     "paths": {
-      "@shared/*": ["src/shared/*"]
+      "@/*": ["src/*"],
     },
     "skipLibCheck": true,
     "strict": true,
