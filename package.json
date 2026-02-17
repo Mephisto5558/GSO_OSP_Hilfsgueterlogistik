@@ -31,6 +31,9 @@
     "watch:backend": "npm run build:backend -- --watch --preserveWatchOutput",
     "watch:frontend": "vite"
   },
+  "dependencies": {
+    "sqlite3": "^5.1.7"
+  },
   "devDependencies": {
     "@mephisto5558/better-types": "latest",
     "@mephisto5558/eslint-config": "latest",
