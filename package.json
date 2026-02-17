@@ -18,18 +18,7 @@
   "type": "module",
   "main": "dist/backend/index.js",
   "types": "dist/backend/index.d.ts",
-  "main": "dist/backend/index.js",
-  "types": "dist/backend/index.d.ts",
   "scripts": {
-    "build": "npm run clean && npm run build:backend && npm run build:frontend",
-    "build:backend": "tsc --build src/backend",
-    "build:frontend": "tsc --project src/frontend --noEmit && vite build",
-    "clean": "rimraf dist",
-    "lint": "eslint .",
-    "lint:ci": "eslint . --format @microsoft/eslint-formatter-sarif --output-file eslint-results.sarif",
-    "start": "node dist/backend/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch": "concurrently -n \"TSC,VITE\" -c \"blue,magenta\" \"tsc --build --watch\" \"vite\""
     "build": "npm run clean && npm run build:backend && npm run build:frontend",
     "build:backend": "tsc --build src/backend",
     "build:frontend": "tsc --project src/frontend --noEmit && vite build",
@@ -45,14 +34,6 @@
   "devDependencies": {
     "@mephisto5558/better-types": "latest",
     "@mephisto5558/eslint-config": "latest",
-    "@microsoft/eslint-formatter-sarif": "latest",
-    "@types/node": "24.x",
-    "concurrently": "latest",
-    "esbuild": "latest",
-    "rimraf": "latest",
-    "typescript": "latest",
-    "vite": "7.3.x",
-    "vite-tsconfig-paths": "6.x"
     "@microsoft/eslint-formatter-sarif": "latest",
     "@types/node": "24.x",
     "concurrently": "latest",
