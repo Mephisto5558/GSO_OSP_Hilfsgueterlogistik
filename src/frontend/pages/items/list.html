@@ -32,53 +32,59 @@
 		<thead>
 			<tr>
 				<th scope='col'>ID</th>
-				<th scope='col'>Name</th>
-				<th scope='col'>Status</th>
 				<th scope='col'>Storage Location</th>
-				<th scope='col'>Amount</th>
-				<th scope='col'>Expiration Date</th>
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope='row'>I123</th>
-				<td>Tent, 2 People</td>
-				<td>Available</td>
+			<tr class="box">
+				<th scope='row'>1</th>
 				<td>Tent 2, Shelf 5</td>
-				<td>7</td>
-				<td>-</td>
 			</tr>
 			<tr>
-				<th scope='row'>B321</th>
-				<td>Toilet Paper Box</td>
-				<td>On Delivery</td>
-				<td>-</td>
-				<td>999</td>
-				<td>-</td>
-			</tr>
-			<tr>
-				<th scope='row'>-> I234</th>
-				<td>Toilet Paper</td>
-				<td>On Delivery</td>
-				<td>-</td>
-				<td>99</td>
-				<td>-</td>
-			</tr>
-			<tr>
-				<th scope='row'>-> I235</th>
-				<td>Sand Paper</td>
-				<td>On Delivery</td>
-				<td>-</td>
-				<td>1</td>
-				<td>-</td>
-			</tr>
-			<tr>
-				<th scope='row'>I666</th>
-				<td>Can of Beans</td>
-				<td>Distributed</td>
-				<td>-</td>
-				<td>0</td>
-				<td>27.11.2036</td>
+				<td colspan='2'>
+					<table class='box-content hidden'>
+						<thead>
+							<tr>
+								<th scope='col'>ID</th>
+								<th scope='col'>Description</th>
+								<th scope='col'>Status</th>
+								<th scope='col'>Expiry Date</th>
+								<th scope='col'>Arrival Date</th>
+								<th scope='col'>Issues Date</th>
+								<th scope='col'>Return Date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope='row'>I123</th>
+								<td>Tent, 2 People</td>
+								<td>Available</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope='row'>I234</th>
+								<td>Toilet Paper</td>
+								<td>On Delivery</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope='row'>I235</th>
+								<td>Sand Paper</td>
+								<td>On Delivery</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
 			</tr>
 		</tbody>
 	</table>
@@ -87,6 +93,14 @@
 <script>
 	document.getElementById('menu-button').addEventListener('click', function() {
 		document.getElementById('menu').classList.toggle('hidden');
+	});
+	document.querySelectorAll('.box').forEach((box) => {
+		console.log(box);
+		box.addEventListener('click', function() {
+			const nextRow = this.closest('tr').nextElementSibling;
+			const boxContent = nextRow.querySelector('.box-content');
+			boxContent.classList.toggle('hidden');
+		});
 	});
 </script>
 </html>

@@ -43,3 +43,11 @@ input {
 img #logo {
   inline-size: 25%;
 }
+
+.box {
+  cursor: pointer;
+}
+
+.box-content {
+  width: 100%;
+}
