@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang='en' data-theme='light'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel='stylesheet' href='/styles/base.css'>
+	<link rel='stylesheet' href='/styles/show-items.css'>
+	<link rel='stylesheet' href='/styles/show-users.css'>
+  <title>Item Detail - Emergency Supply System</title>
+</head>
+<body>
+  <header id='page-header'>
+    <a href='/'><img id='logo' src='../logo.png'></a>
+	<div id='actions'>
+		<a href='show'></a><button id='scan-item'>Scan Item</button></a>
+	</div>
+	<button id='menu-button'>≡</button>
+	<div id='menu' class='menu hidden'>
+		<a href='#'>Home</a>
+		<a href='#'>About</a>
+		<a href='#'>Contact</a>
+	</div>
+  </header>
+  <div id='page-content'>
+    <form id='new-user-form' method='post'>
+      <div class='form-entry'>
+        <label for='box'>Box:</label>
+        <select type='select' id='box' placeholder='Enter username...' required>
+			<option value=''>Select box...</option>
+			<option value='1'>1</option>
+		</select>
+      </div>
+      <div class='form-entry'>
+        <label for='description'>Description:</label>
+        <input id='description' placeholder='Enter description...' required/>
+      </div>
+      <div class='form-entry'>
+        <label for='status'>Status:</label>
+        <input type='text' id='status' placeholder='Enter status...' required/>
+      </div>
+      <div class='form-entry'>
+        <label for='expirydate'>Expiry Date:</label>
+        <input type='text' id='expirydate' placeholder='Enter expiry date...' required/>
+      </div>
+      <div class='form-entry'>
+        <label for='arrivaldate'>Arrival Date:</label>
+        <input type='text' id='arrivaldate' placeholder='Enter arrival date...' required/>
+      </div>
+      <div class='form-entry'>
+        <label for='issuedate'>Issue Date:</label>
+        <input type='text' id='issuedate' placeholder='Enter issue date...' required/>
+      </div>
+      <div class='form-entry'>
+        <label for='returndate'>Return Date:</label>
+        <input type='text' id='returndate' placeholder='Enter return date...' required/>
+      </div>
+      <div id='buttons'>
+        <button id='save-button'>Save</button>
+        <button id='delete-button'>Delete</button>
+        <button id='cancel-button'>Cancel</button>
+      </div>
+    </form>
+  </div>
+</body>
+<script>
+	document.getElementById('menu-button').addEventListener('click', function() {
+		document.getElementById('menu').classList.toggle('hidden');
+	});
+</script>
+</html>
