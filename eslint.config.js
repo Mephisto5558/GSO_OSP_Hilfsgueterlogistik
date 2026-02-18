@@ -27,7 +27,7 @@ export default [
     rules: {
       'import-x/extensions': 'off', // Contradicts typescript's requirements
       'import-x/prefer-default-export': 'off', // Required for dynamic loading logic
-      'new-cap': getModifiedRule(config, 'new-cap', undefined, {
+      'new-cap': getModifiedRule(config, 'new-cap', {
         capIsNewExceptions: [
           'Router' // Express.js' Router is only a fake class
         ]
