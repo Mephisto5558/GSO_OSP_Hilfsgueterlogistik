@@ -29,17 +29,27 @@
     "test": "vitest",
     "test:coverage": "vitest run --coverage",
     "watch": "conc -n \"TSC,VITE\" -c \"blue,magenta\" --pad-prefix \"npm:watch:backend\" \"npm:watch:frontend\"",
-    "watch:backend": "npm run build:backend -- --watch --preserveWatchOutput",
+    "watch:backend": "npm run build:backend && conc -n \"BUILD,SRV\" -c \"blue,green\" \"npm run build:backend -- --watch --preserveWatchOutput\" \"node --watch dist/backend/index.js\"",
     "watch:frontend": "vite"
   },
   "dependencies": {
+    "compression": "1.x",
+    "dotenv": "17.x",
+    "express": "^5.2.1",
+    "express-xss-sanitizer": "2.x",
+    "passport": "^0.7.0",
     "sqlite3": "^5.1.7"
   },
   "devDependencies": {
     "@mephisto5558/better-types": "latest",
     "@mephisto5558/eslint-config": "latest",
     "@microsoft/eslint-formatter-sarif": "latest",
+    "@types/compression": "1.x",
+    "@types/express": "5.x",
+    "@types/express-serve-static-core": "5.1.x",
+    "@types/express-xss-sanitizer": "2.x",
     "@types/node": "24.x",
+    "@types/passport": "1.0.x",
     "@vitest/coverage-istanbul": "4.0.x",
     "concurrently": "latest",
     "esbuild": "latest",
