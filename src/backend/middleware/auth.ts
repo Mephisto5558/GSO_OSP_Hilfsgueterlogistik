@@ -17,6 +17,7 @@ const store = new ConnectSessionKnexStore({
   cleanupInterval: appConfig.SessionExpiryMs
 });
 
+/* eslint-disable-next-line sonarjs/insecure-cookie -- only local server */
 export const authenticator = session({
   store,
   name: appConfig.sessionCookieName,
