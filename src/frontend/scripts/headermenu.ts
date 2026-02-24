@@ -1,6 +1,6 @@
 const
-  menuButton = document.getElementById('menu-button'),
-  menu = document.getElementById('menu');
+  menuButton = document.querySelector('#menu-button'),
+  menu = document.querySelector('#menu');
 
 if (menuButton && menu) {
   menuButton.addEventListener('click', () => {

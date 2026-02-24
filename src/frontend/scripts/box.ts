@@ -1,4 +1,4 @@
-document.querySelectorAll('.box').forEach(box => {
+for (const box of document.querySelectorAll('.box')) {
   box.addEventListener('click', () => {
     const currentRow = box.closest('tr');
     if (currentRow) {
@@ -11,4 +11,4 @@ document.querySelectorAll('.box').forEach(box => {
       box.classList.toggle('active');
     }
   });
-});
+}
