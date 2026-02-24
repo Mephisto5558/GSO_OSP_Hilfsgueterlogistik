@@ -4,14 +4,11 @@ document.querySelectorAll('.box').forEach(box => {
     if (currentRow) {
       const nextRow = currentRow.nextElementSibling;
       if (!(nextRow instanceof HTMLElement)) return;
-      if (nextRow) {
-        const boxContent = nextRow.querySelector('.box-content');
-        if (!(boxContent instanceof HTMLElement)) return;
-        if (boxContent) {
-          boxContent.classList.toggle('hidden');
-          box.classList.toggle('active');
-        }
-      }
+
+      const boxContent = nextRow.querySelector('.box-content');
+      if (!(boxContent instanceof HTMLElement)) return;
+      boxContent.classList.toggle('hidden');
+      box.classList.toggle('active');
     }
   });
 });

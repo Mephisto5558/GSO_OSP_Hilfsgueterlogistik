@@ -1,5 +1,5 @@
 const
-  menuButton = document.getElementById('menu-button');
+  menuButton = document.getElementById('menu-button'),
   menu = document.getElementById('menu');
 
 if (menuButton && menu) {
