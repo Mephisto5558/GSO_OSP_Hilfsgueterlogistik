@@ -12,3 +12,10 @@ declare module 'express-serve-static-core' {
     methods: Record<string, boolean>;
   }
 }
+
+declare module 'express-session' {
+  interface SessionData {
+    userId: number;
+    roleId: number;
+  }
+}

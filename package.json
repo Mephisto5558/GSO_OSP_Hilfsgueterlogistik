@@ -33,20 +33,24 @@
     "watch:frontend": "vite"
   },
   "dependencies": {
+    "better-sqlite3": "12.6.x",
     "compression": "1.x",
+    "connect-session-knex": "5.0.x",
     "dotenv": "17.x",
-    "express": "^5.2.1",
+    "express": "5.2.x",
+    "express-session": "1.x",
     "express-xss-sanitizer": "2.x",
-    "passport": "^0.7.0",
-    "sqlite3": "^5.1.7"
+    "knex": "3.1.x"
   },
   "devDependencies": {
     "@mephisto5558/better-types": "latest",
     "@mephisto5558/eslint-config": "latest",
     "@microsoft/eslint-formatter-sarif": "latest",
+    "@types/better-sqlite3": "7.x",
     "@types/compression": "1.x",
     "@types/express": "5.x",
     "@types/express-serve-static-core": "5.1.x",
+    "@types/express-session": "1.x",
     "@types/express-xss-sanitizer": "2.x",
     "@types/node": "24.x",
     "@types/passport": "1.0.x",
