@@ -4,7 +4,9 @@
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<link rel='stylesheet' href='/styles/base.css'>
+	<link rel='stylesheet' href='/styles/header.css'>
 	<link rel='stylesheet' href='/styles/index.css'>
+	<link rel='stylesheet' href='/styles/list.css'>
   <title>User Management - Emergency Supply System</title>
 </head>
 <body>
@@ -12,14 +14,14 @@
     <a href='/'><img id='logo' src='../logo.png'></a>
 	<form id='search-form' method='post'>
 		<input type='text' id='query' placeholder='Search' />
-		<button id='search-button'>⌕</button>
+		<button id='search-button'>&nbsp;</button>
 	</form>
 	<div id='actions'>
 		<a href='show'><button id='new-user'>New User</button></a>
 	</div>
 	<button id='menu-button'>≡</button>
 	<div id='menu' class='menu hidden'>
-		<a href='/users/list'>User Management</a>
+		<a class='current' href='/users/list'>User Management</a>
 		<a href='/items/list'>Item Management</a>
 		<a href='/'>Logout</a>
 	</div>
@@ -31,19 +33,19 @@
 		</caption>
 		<thead>
 			<tr>
-				<th scope="col">ID</th>
-				<th scope="col">Username</th>
-				<th scope="col">Roles</th>
+				<th scope='col'>User ID</th>
+				<th scope='col'>Username</th>
+				<th scope='col'>Roles</th>
 			</tr>
 		</thead>
 		<tbody>
 			<tr>
-				<th scope="row">1</th>
+				<th scope='row'>1</th>
 				<td>Peter Pan</td>
 				<td>Admin</td>
 			</tr>
 			<tr>
-				<th scope="row">2</th>
+				<th scope='row'>2</th>
 				<td>Astro Boy</td>
 				<td>User</td>
 			</tr>
@@ -51,9 +53,5 @@
 	</table>
   </div>
 </body>
-<script>
-	document.getElementById('menu-button').addEventListener('click', function() {
-		document.getElementById('menu').classList.toggle('hidden');
-	});
-</script>
+<script src="../scripts/headermenu.js"></script>
 </html>

@@ -4,7 +4,9 @@
   <meta charset='UTF-8'>
   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
 	<link rel='stylesheet' href='/styles/base.css'>
+	<link rel='stylesheet' href='/styles/header.css'>
 	<link rel='stylesheet' href='/styles/index.css'>
+	<link rel='stylesheet' href='/styles/list.css'>
   <title>Item Management - Emergency Supply System</title>
 </head>
 <body>
@@ -12,7 +14,7 @@
     <a href='/'><img id='logo' src='../logo.png'></a>
 	<form id='search-form' method='post'>
 		<input type='text' id='query' placeholder='Search' />
-		<button id='search-button'>⌕</button>
+		<button id='search-button'>&nbsp;</button>
 	</form>
 	<div id='actions'>
 		<a href='show'><button id='scan-item'>Scan Item</button></a>
@@ -20,18 +22,18 @@
 	<button id='menu-button'>≡</button>
 	<div id='menu' class='menu hidden'>
 		<a href='/users/list'>User Management</a>
-		<a href='/items/list'>Item Management</a>
+		<a class='current' href='/items/list'>Item Management</a>
 		<a href='/'>Logout</a>
 	</div>
   </header>
   <div id='page-content'>
     <table id='list-item'>
 		<caption>
-			Item Management
+			Box Management
 		</caption>
 		<thead>
 			<tr>
-				<th scope='col'>ID</th>
+				<th scope='col'>Box ID</th>
 				<th scope='col'>Storage Location</th>
 			</tr>
 		</thead>
@@ -90,17 +92,6 @@
 	</table>
   </div>
 </body>
-<script>
-	document.getElementById('menu-button').addEventListener('click', function() {
-		document.getElementById('menu').classList.toggle('hidden');
-	});
-	document.querySelectorAll('.box').forEach((box) => {
-		console.log(box);
-		box.addEventListener('click', function() {
-			const nextRow = this.closest('tr').nextElementSibling;
-			const boxContent = nextRow.querySelector('.box-content');
-			boxContent.classList.toggle('hidden');
-		});
-	});
-</script>
+<script src="../scripts/headermenu.js"></script>
+<script src="../scripts/box.js"></script>
 </html>
