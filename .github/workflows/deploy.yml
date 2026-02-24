@@ -31,7 +31,7 @@ jobs:
           gpg_private_key: ${{ secrets.DEPLOY_GPG_KEY }}
 
       - name: Setup Environment
-        uses: ./.github/workflows
+        uses: ./.github/actions/setup
 
       - name: Build project for distribution
         run: npm run build
