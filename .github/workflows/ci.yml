@@ -21,9 +21,11 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup Environment
-        uses: ./.github/workflows
+        uses: ./.github/actions/setup
 
       - name: Run ESLint
+        env:
+          SARIF_ESLINT_IGNORE_SUPPRESSED: 'true'
         run: npm run lint:ci
 
       - name: Upload analysis results to GitHub
@@ -43,7 +45,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup Environment
-        uses: ./.github/workflows
+        uses: ./.github/actions/setup
 
       - name: Run Tests
         run: npm run test:coverage
@@ -63,7 +65,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup Environment
-        uses: ./.github/workflows
+        uses: ./.github/actions/setup
 
       - name: Build backend project
         run: npm run build:backend
@@ -77,7 +79,7 @@ jobs:
         uses: actions/checkout@v6
 
       - name: Setup Environment
-        uses: ./.github/workflows
+        uses: ./.github/actions/setup
 
       - name: Build frontend project
         run: npm run build:frontend
