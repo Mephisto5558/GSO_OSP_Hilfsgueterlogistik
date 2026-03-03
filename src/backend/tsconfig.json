@@ -4,6 +4,7 @@
   "compilerOptions": {
     "lib": ["ESNext"],
     "outDir": "../../dist/backend",
+    "sourceMap": true,
     "types": ["node"]
   },
   "references": [{ "path": "../shared" }]
