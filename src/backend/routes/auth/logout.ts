@@ -8,5 +8,5 @@ export default Router()
       return void res.status(constants.HTTP_STATUS_INTERNAL_SERVER_ERROR).send('Logout failed');
 
     res.clearCookie(appConfig.sessionCookieName);
-    res.redirect(constants.HTTP_STATUS_FOUND, '/');
+    res.redirect(constants.HTTP_STATUS_TEMPORARY_REDIRECT, '/');
   }));
