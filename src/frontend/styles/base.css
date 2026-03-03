@@ -1,0 +1,94 @@
+@import 'variables.css';
+
+:root {
+  font-family: sans-serif;
+  font-size: 1.5rem;
+
+  color-scheme: light dark;
+}
+
+html, body {
+	block-size: 100%;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  margin: 0;
+
+  transition: 0.5s;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.hidden {
+  display: none;
+}
+
+.visible {
+  visibility: visible;
+}
+
+a, a:visited {
+  color: var(--color-hyperlink);
+}
+
+button:not(.themeButton),
+input,
+select {
+  border-radius: .25rem;
+  overflow: auto;
+  padding: .5rem 1rem
+}
+
+button {
+  cursor: pointer;
+  background-color: var(--color-bg-button);
+  color: var(--color-fg-button);
+  border: 0.0625rem solid var(--color-bg-form-element);
+  transition: 0.5s;
+}
+
+.button-dark {
+  color: var(--color-bg-button);
+  background-color: #3f3f3f;
+  border-color: var(--color-fg-button);
+}
+
+table {
+  border-collapse: collapse;
+}
+
+input,
+select,
+textarea {
+  background-color: var(--color-bg);
+  color: var(--color-fg);
+  border: 0.125rem solid var(--color-bg-form-element);
+  border-radius: .25rem;
+  padding: .5rem 1rem;
+
+  transition: 0.5s;
+}
+
+input:hover,
+select:hover,
+textarea:hover,
+button:hover {
+  border-color: var(--color-fg-form-element);
+}
+
+input:focus,
+select:focus,
+textarea:focus,
+button:focus {
+  outline: none;
+}
+
+#page-content {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}

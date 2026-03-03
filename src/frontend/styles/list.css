@@ -1,0 +1,24 @@
+@import 'variables.css';
+
+#list-item {
+  inline-size: 95%;
+  border: 0.0625rem solid var(--color-fg);
+
+  caption {
+    text-align: start;
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin-inline-start: 1rem;
+  }
+}
+
+thead, tr th, tr td {
+  border: 0.0625rem solid var(--color-fg);
+  padding: 1rem;
+}
+
+#search-button {
+  background-color: var(--color-fg);
+  -webkit-mask: url(../search.svg) no-repeat center;
+  mask: url(../search.svg) no-repeat center;
+}
