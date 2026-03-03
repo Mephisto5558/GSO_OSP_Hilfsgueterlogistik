@@ -29,10 +29,10 @@ export default Router()
     }
   })
   .get('/{item}', async (
-    req: Request<unknown, getItemErrRes | getItemSuccessRes, unknown>, res, next
+    req: Request<{ item: string }, getItemErrRes | getItemSuccessRes, unknown>, res, next
   ) => {
     try {
-      const item = await db<Item>('item').where('id', '=', req.query).first();
+      const item = await db<Item>('item').where('id', '=', req.params.item).first();
       if (!item) return next(); // 404 handler
 
       return res.json({ status: 'success', item });

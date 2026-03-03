@@ -7,8 +7,6 @@ const
   router = Router({ caseSensitive: false }),
   routesRoot = resolve(import.meta.dirname, '../routes');
 
-router.get('/', (_req, res) => res.send('API is available'));
-
 // Dynamically import and register all sibling route files
 await Promise.all(
   readdirSync(routesRoot, { withFileTypes: true, recursive: true })
