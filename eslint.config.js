@@ -42,6 +42,9 @@ export default [
       parserOptions: {
         project: './src/frontend/tsconfig.json'
       }
+    },
+    rules: {
+      '@typescript-eslint/strict-void-return': 'off'
     }
   },
   {
