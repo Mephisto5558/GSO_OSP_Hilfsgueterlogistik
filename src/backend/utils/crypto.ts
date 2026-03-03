@@ -1,9 +1,9 @@
 import { randomBytes, scryptSync, timingSafeEqual } from 'node:crypto';
-import type { DBUser } from '@/shared/types/globals.js';
+import type { User } from '@/shared/types/db.js';
 
 const BYTE_BIT = 8;
 
-export function hashForDatabase(frontendHash: string): DBUser['passwordHash'] {
+export function hashForDatabase(frontendHash: string): User['passwordHash'] {
   const
     salt = randomBytes(BYTE_BIT * 2).toString('hex'),
     derivedKey = scryptSync(frontendHash, salt, BYTE_BIT ** 2);
