@@ -7,7 +7,8 @@ import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 const
-  DEFAULT_PORT = 8080,
+  DEFAULT_FRONTEND_PORT = 8080,
+  DEFAULT_BACKEND_PORT = 3000,
   REQUIRED_COVERAGE = 80,
   rootForBuild = resolve(import.meta.dirname, 'src/frontend'),
   pagesDir = resolve(rootForBuild, 'pages'),
@@ -33,8 +34,14 @@ export default defineConfig(({ command }) => ({
   plugins: [tsconfigPaths()],
   resolve: { alias },
   server: {
-    port: Number(process.env.port ?? DEFAULT_PORT),
-    strictPort: true
+    port: Number(process.env.port ?? DEFAULT_FRONTEND_PORT),
+    strictPort: true,
+    proxy: {
+      '/api': {
+        target: `http://localhost:${Number(process.env.backend_port ?? DEFAULT_BACKEND_PORT)}`,
+        changeOrigin: true
+      }
+    }
   },
   test: {
     root: resolve(import.meta.dirname),
