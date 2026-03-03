@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang='en' data-theme='light'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+	<link rel='stylesheet' href='/styles/base.css'>
+	<link rel='stylesheet' href='/styles/header.css'>
+	<link rel='stylesheet' href='/styles/index.css'>
+	<link rel='stylesheet' href='/styles/list.css'>
+  <title>Item Management - Emergency Supply System</title>
+</head>
+<body>
+  <header id='page-header'>
+    <a href='/'><img id='logo' src='../logo.webp'></a>
+	<form id='search-form' method='post'>
+		<input type='text' id='query' placeholder='Search' />
+		<button id='search-button'>&nbsp;</button>
+	</form>
+	<div id='actions'>
+		<a href='show'><button id='scan-item'>Scan Item</button></a>
+	</div>
+	<button id='menu-button'>≡</button>
+	<div id='menu' class='menu hidden'>
+		<a href='/users/list'>User Management</a>
+		<a class='current' href='/items/list'>Item Management</a>
+		<a href='/'>Logout</a>
+	</div>
+  </header>
+  <div id='page-content'>
+    <table id='list-item'>
+		<caption>
+			Box Management
+		</caption>
+		<thead>
+			<tr>
+				<th scope='col'>Box ID</th>
+				<th scope='col'>Storage Location</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='box'>
+				<th scope='row'>1</th>
+				<td>Tent 2, Shelf 5</td>
+			</tr>
+			<tr>
+				<td colspan='2'>
+					<table class='box-content hidden'>
+						<thead>
+							<tr>
+								<th scope='col'>ID</th>
+								<th scope='col'>Description</th>
+								<th scope='col'>Status</th>
+								<th scope='col'>Expiry Date</th>
+								<th scope='col'>Arrival Date</th>
+								<th scope='col'>Issues Date</th>
+								<th scope='col'>Return Date</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th scope='row'>I123</th>
+								<td>Tent, 2 People</td>
+								<td>Available</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope='row'>I234</th>
+								<td>Toilet Paper</td>
+								<td>On Delivery</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+							<tr>
+								<th scope='row'>I235</th>
+								<td>Sand Paper</td>
+								<td>On Delivery</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+								<td>-</td>
+							</tr>
+						</tbody>
+					</table>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+  </div>
+</body>
+<script src="../scripts/headermenu.js"></script>
+<script src="../scripts/box.js"></script>
+</html>

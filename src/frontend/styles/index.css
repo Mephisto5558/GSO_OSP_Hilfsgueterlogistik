@@ -1,0 +1,58 @@
+#login-form {
+	display: flex;
+	flex-direction: column;
+  font-size: 1.5rem;
+  margin-block-start: 1rem;
+	gap: 0.625rem;
+  inline-size: 75%;
+}
+
+#login-form div:not(#buttons) {
+	display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  input {
+    padding: 1.5rem 0.5rem;
+    font-size: 1.5rem;
+  }
+}
+
+#buttons button {
+  font-size: 1.5rem;
+  width: 100%;
+  padding: 1.5rem 0.5rem;
+}
+
+input {
+  inline-size: 70%;
+}
+
+img #logo {
+  inline-size: 25%;
+}
+
+.box {
+  cursor: pointer;
+
+  td {
+    display: flex;
+    justify-content: space-between;
+    border: none;
+  }
+
+  td::after {
+    content: '▼';
+    font-size: 0.8em;
+    opacity: 0.7;
+    pointer-events: none;
+  }
+}
+
+.box.active td::after {
+  content: '▲';
+}
+
+.box-content {
+  inline-size: 100%;
+}

@@ -1,0 +1,74 @@
+@import 'variables.css';
+
+#page-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  height: 5rem;
+  margin: auto 0.5rem;
+
+  a, #logo {
+    height: 80%;
+  }
+
+  #search-form {
+    width: 60%;
+
+    #query {
+      width: 70%;
+    }
+
+    * {
+      font-size: 1.5rem;
+    }
+  }
+
+  #actions {
+    margin-inline-start: auto;
+
+    button {
+      font-size: 1.5rem;
+    }
+  }
+
+  #menu-button {
+	  font-size: 1.5rem;
+  }
+
+  #menu {
+    inset-block-start: 4.375rem;
+    inset-inline-end: 0.5%;
+    position: absolute;
+    border: 0.0625rem solid #ccc;
+    border-radius: 0.25rem;
+    z-index: 9999;
+
+    a {
+      padding: 1.5rem;
+      font-size: 1.5rem;
+      text-decoration: none;
+      background: var(--color-bg);
+
+      transition: 0.5s;
+      border-radius: 0.25rem;
+    }
+
+    a.current {
+      border: 0.0625rem solid var(--color-fg);
+    }
+
+    a:nth-of-type(even) {
+      background-color: lightgray;
+    }
+
+    a:hover {
+      background-color: gray;
+      border: 0.0625rem solid var(--color-fg);
+    }
+  }
+
+  #menu:not(.hidden) {
+    display: flex;
+    flex-direction: column;
+  }
+}
