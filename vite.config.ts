@@ -7,6 +7,7 @@ import { defineConfig } from 'vite';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
 const
+  DEFAULT_PORT = 8080,
   REQUIRED_COVERAGE = 80,
   rootForBuild = resolve(import.meta.dirname, 'src/frontend'),
   pagesDir = resolve(rootForBuild, 'pages'),
@@ -31,6 +32,9 @@ export default defineConfig(({ command }) => ({
   publicDir: resolve(rootForBuild, 'assets'),
   plugins: [tsconfigPaths()],
   resolve: { alias },
+  server: {
+    port: Number(process.env.port ?? DEFAULT_PORT)
+  },
   test: {
     root: resolve(import.meta.dirname),
     css: false,
