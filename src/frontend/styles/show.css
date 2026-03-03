@@ -1,0 +1,35 @@
+#new-user-form {
+	display: flex;
+	flex-direction: column;
+  font-size: 1.5rem;
+  margin-block-start: 1rem;
+	gap: 0.625rem;
+  inline-size: 75%;
+}
+
+#new-user-form div:not(#buttons) {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  select, input {
+    padding: 1.5rem 0.5rem;
+    font-size: 1.5rem;
+    inline-size: 70%;
+  }
+}
+
+#buttons {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.625rem;
+
+  #save-button {
+    grid-column: 1 / -1;
+  }
+}
+
+#buttons button {
+  font-size: 1.5rem;
+  padding: 1.5rem 0.5rem;
+}
