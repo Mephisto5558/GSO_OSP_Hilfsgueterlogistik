@@ -33,7 +33,8 @@ export default defineConfig(({ command }) => ({
   plugins: [tsconfigPaths()],
   resolve: { alias },
   server: {
-    port: Number(process.env.port ?? DEFAULT_PORT)
+    port: Number(process.env.port ?? DEFAULT_PORT),
+    strictPort: true
   },
   test: {
     root: resolve(import.meta.dirname),
