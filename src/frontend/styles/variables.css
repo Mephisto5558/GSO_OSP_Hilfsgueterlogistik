@@ -1,4 +1,4 @@
-html {
+:root {
   --color-bg: var(--color-secondary);
   --color-fg: var(--color-primary);
   --color-bg-button: var(--color-secondary);
