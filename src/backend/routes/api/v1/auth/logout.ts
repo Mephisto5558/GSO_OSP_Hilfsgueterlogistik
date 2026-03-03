@@ -1,6 +1,6 @@
 import { constants } from 'node:http2';
 import { Router } from 'express';
-import { appConfig } from '../../config/index.js';
+import { appConfig } from '../../../../config/index.js';
 
 export default Router()
   .post('/', (req, res) => req.session.destroy(err => {
