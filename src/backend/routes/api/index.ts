@@ -1,6 +1,6 @@
 import { constants } from 'node:http2';
 import { Router } from 'express';
-import { appConfig } from '../../config/index.js';
+import { appConfig } from '@/backend/config/index.js';
 
 /** Adds a API version to the URL if none has been specified. */
 export default Router()

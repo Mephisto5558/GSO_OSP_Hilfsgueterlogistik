@@ -10,7 +10,7 @@ const DEFAULT_BACKEND_PORT = 3000;
 export const appConfig = {
   port: Number(process.env.BACKEND_PORT ?? DEFAULT_BACKEND_PORT),
   defaultAPIVersion: 1,
-  SessionExpiryMs: Number.parseInt(process.env.SESSION_EXPIRY_MS),
+  SessionExpiryMs: Number.parseInt(process.env.SESSION_EXPIRY_MS, 10),
   sessionCookieName: 'connect.sid'
 };
 

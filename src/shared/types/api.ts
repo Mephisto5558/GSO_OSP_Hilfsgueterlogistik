@@ -2,12 +2,14 @@
 
 import type { Item, User } from './db.js';
 
-type SuccessResData = string | Record<string, unknown>;
-type SuccessRes<DATA extends Record<string, SuccessResData | SuccessResData[]>> = {
-  status: 'success';
-} & DATA;
+type Prettify<T> = { [K in keyof T]: T[K]; } & {};
 
-type ErrorRes = { status: 'error'; error: string };
+type SuccessResData = string | Record<string, unknown>;
+type SuccessRes<DATA extends Record<string, SuccessResData | SuccessResData[]>> = Prettify<{
+  status: 'success';
+} & DATA>;
+
+export type ErrorRes = { status: 'error'; error: string };
 
 export type LoginSuccessRes = SuccessRes<{ user: Pick<User, 'id' | 'userName' | 'roleId'> }>;
 export type LoginErrRes = ErrorRes;
@@ -17,3 +19,10 @@ export type getItemsErrRes = ErrorRes;
 
 export type getItemSuccessRes = SuccessRes<{ item: Item }>;
 export type getItemErrRes = ErrorRes;
+
+
+export type getUsersSuccessRes = SuccessRes<{ users: User[] }>;
+export type getUsersErrRes = ErrorRes;
+
+export type getUserSuccessRes = SuccessRes<{ user: User }>;
+export type getUserErrRes = ErrorRes;
