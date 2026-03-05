@@ -1,12 +1,12 @@
 import { constants } from 'node:http2';
 import { promisify } from 'node:util';
 import express from 'express';
-import { db } from '../../../../middleware/auth.js';
-import { verify } from '../../../../utils/crypto.js';
+import { db } from '@/backend/middleware/auth.js';
+import { verify } from '@/backend/utils/crypto.js';
 
 import type { Request } from 'express';
+import type { LoginErrRes, LoginSuccessRes } from '@/shared/types/api.js';
 import type { User } from '@/shared/types/db.js';
-import type { LoginErrRes, LoginSuccessRes } from '@/shared/types/globals.js';
 
 const errRes = (err: string): LoginErrRes => ({ status: 'error', error: err });
 

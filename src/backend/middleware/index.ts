@@ -19,4 +19,4 @@ export default [
   // methodNotAllowed, // such a handler is out of scope to implement due to the difficulties with a modular approach
   { name: 'notFound', fn: notFound },
   { name: 'errorHandler', fn: errorHandler }
-] as { name: string; fn: RequestHandler | ErrorRequestHandler }[];
+] satisfies { name: string; fn: RequestHandler | ErrorRequestHandler }[];

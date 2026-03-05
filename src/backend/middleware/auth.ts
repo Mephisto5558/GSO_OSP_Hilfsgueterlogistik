@@ -1,7 +1,7 @@
 import { ConnectSessionKnexStore } from 'connect-session-knex';
 import session from 'express-session';
 import knexConstructor from 'knex';
-import { DB_FILE, appConfig } from '../config/index.js';
+import { DB_FILE, appConfig } from '@/backend/config/index.js';
 
 if (!process.env.SESSION_SECRET) throw new Error('Missing SESSION_SECRET in .env');
 
@@ -17,7 +17,6 @@ const store = new ConnectSessionKnexStore({
   cleanupInterval: appConfig.SessionExpiryMs
 });
 
-/* eslint-disable-next-line sonarjs/insecure-cookie -- only local server */
 export const authenticator = session({
   store,
   name: appConfig.sessionCookieName,

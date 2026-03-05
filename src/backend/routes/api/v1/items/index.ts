@@ -1,8 +1,9 @@
 import { constants } from 'node:http2';
 import { Router } from 'express';
-import { db } from '../../../../middleware/auth.js';
+import { db } from '@/backend/middleware/auth.js';
 import type { Request } from 'express';
 
+import type { getItemErrRes, getItemSuccessRes, getItemsErrRes, getItemsSuccessRes } from '@/shared/types/api.js';
 import type { Item } from '@/shared/types/db.js';
 import type {
   getItemErrRes, getItemSuccessRes, getItemsErrRes, getItemsSuccessRes
