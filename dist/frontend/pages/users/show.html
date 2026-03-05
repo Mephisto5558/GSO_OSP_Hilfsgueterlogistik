@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en' data-theme='light'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>User Detail - Emergency Supply System</title>
+  <link rel="stylesheet" crossorigin href="/assets/header.asset-CyJoZngL.css">
+  <link rel="stylesheet" crossorigin href="/assets/show.asset-CGekjKM3.css">
+</head>
+<body>
+  <header id='page-header'>
+    <a href='/'><img id='logo' src='../logo.webp'></a>
+	<div id='actions'>
+		<a href='show'><button id='new-user'>New User</button></a>
+	</div>
+	<button id='menu-button'>≡</button>
+	<div id='menu' class='menu hidden'>
+		<a class='current' href='/users/list'>User Management</a>
+		<a href='/items/list'>Item Management</a>
+		<a href='/'>Logout</a>
+	</div>
+  </header>
+  <div id='page-content'>
+    <form id='new-user-form' method='post'>
+      <div class='form-entry'>
+        <label for='username'>Username:</label>
+        <input type='text' id='username' placeholder='Enter username...' required/>
+      </div>
+      <div class='form-entry'>
+        <label for='password'>Password:</label>
+        <input type='password' id='password' placeholder='Enter password...' required/>
+      </div>
+      <div id='buttons'>
+        <button id='save-button' class='button-dark'>Save</button>
+        <button id='delete-button'>Delete</button>
+        <button id='cancel-button'>Cancel</button>
+      </div>
+    </form>
+  </div>
+</body>
+<script src="../scripts/headermenu.js"></script>
+</html>

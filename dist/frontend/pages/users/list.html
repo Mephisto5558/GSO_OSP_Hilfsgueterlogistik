@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang='en' data-theme='light'>
+<head>
+  <meta charset='UTF-8'>
+  <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+  <title>User Management - Emergency Supply System</title>
+  <link rel="stylesheet" crossorigin href="/assets/header.asset-CyJoZngL.css">
+  <link rel="stylesheet" crossorigin href="/assets/index.asset-DDH_NO8E.css">
+  <link rel="stylesheet" crossorigin href="/assets/list.asset-CyarjG5C.css">
+</head>
+<body>
+  <header id='page-header'>
+    <a href='/'><img id='logo' src='../logo.webp'></a>
+	<form id='search-form' method='post'>
+		<input type='text' id='query' placeholder='Search' />
+		<!-- &nbsp; so the button has the correct size without content (icon is added via css) -->
+		<button id='search-button'>&nbsp;</button>
+	</form>
+	<div id='actions'>
+		<a href='show'><button id='new-user'>New User</button></a>
+	</div>
+	<button id='menu-button'>≡</button>
+	<div id='menu' class='menu hidden'>
+		<a class='current' href='/users/list'>User Management</a>
+		<a href='/items/list'>Item Management</a>
+		<a href='/'>Logout</a>
+	</div>
+  </header>
+  <div id='page-content'>
+    <table id='list-item'>
+		<caption>
+			User Management
+		</caption>
+		<thead>
+			<tr>
+				<th scope='col'>User ID</th>
+				<th scope='col'>Username</th>
+				<th scope='col'>Roles</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<th scope='row'>1</th>
+				<td>Peter Pan</td>
+				<td>Admin</td>
+			</tr>
+			<tr>
+				<th scope='row'>2</th>
+				<td>Astro Boy</td>
+				<td>User</td>
+			</tr>
+		</tbody>
+	</table>
+  </div>
+</body>
+<script src="../scripts/headermenu.js"></script>
+</html>
