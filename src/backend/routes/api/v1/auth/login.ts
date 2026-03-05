@@ -17,41 +17,35 @@ export default express.Router()
     if (!req.body?.userName || !req.body.passwordHash)
       return res.status(constants.HTTP_STATUS_BAD_REQUEST).json(errRes('Missing required data in body'));
 
-    try {
-      const user = await db<{ userName: string; passwordHash: string }, User>('user')
-        .whereRaw('LOWER(userName) = LOWER(?)', [req.body.userName])
-        .first();
+    const { passwordHash, ...user } = await db<User>('user')
+      .where('LOWER(userName)', req.body.userName.toLowerCase())
+      .first() ?? {};
 
-      if (!user || !verify(req.body.passwordHash, user.passwordHash))
-        return res.status(constants.HTTP_STATUS_UNAUTHORIZED).json(errRes('Invalid login data'));
+    if (!('id' in user) || !passwordHash || !verify(req.body.passwordHash, passwordHash))
+      return res.status(constants.HTTP_STATUS_UNAUTHORIZED).json(errRes('Invalid login data'));
 
-      const
-        /* eslint-disable @typescript-eslint/strict-void-return, custom/unbound-method -- fine here due to bind */
-        regenerate = promisify(req.session.regenerate).bind(req.session),
-        save = promisify(req.session.save).bind(req.session);
-        /* eslint-enable @typescript-eslint/strict-void-return, custom/unbound-method */
+    const
+      /* eslint-disable @typescript-eslint/strict-void-return, custom/unbound-method -- fine here due to bind */
+      regenerate = promisify(req.session.regenerate).bind(req.session),
+      save = promisify(req.session.save).bind(req.session);
+    /* eslint-enable @typescript-eslint/strict-void-return, custom/unbound-method */
 
-      try { await regenerate(); }
-      catch (err) {
-        console.error(err);
-        return void res.status(constants.HTTP_STATUS_INTERNAL_SERVER_ERROR).json(errRes('Error generating session'));
-      }
-
-      /* eslint-disable require-atomic-updates */
-      req.session.userId = user.id;
-      req.session.roleId = user.roleId;
-      /* eslint-enable require-atomic-updates */
-
-      try { await save(); }
-      catch (err) {
-        console.error(err);
-        return void res.status(constants.HTTP_STATUS_INTERNAL_SERVER_ERROR).json(errRes('Error saving session'));
-      }
-
-      return void res.json({ status: 'success', user: { id: user.id, userName: user.userName, roleId: user.roleId } });
-    }
+    try { await regenerate(); }
     catch (err) {
-      console.error(err);
-      res.status(constants.HTTP_STATUS_INTERNAL_SERVER_ERROR).json(errRes('Internal Server Error'));
+      console.error(`Error generating session for userId ${user.id}`, err);
+      return void res.status(constants.HTTP_STATUS_INTERNAL_SERVER_ERROR).json(errRes('Error generating session'));
     }
+
+    /* eslint-disable require-atomic-updates */
+    req.session.userId = user.id;
+    req.session.roleId = user.roleId;
+    /* eslint-enable require-atomic-updates */
+
+    try { await save(); }
+    catch (err) {
+      console.error(`Error saving session for userId ${user.id}`, err);
+      return void res.status(constants.HTTP_STATUS_INTERNAL_SERVER_ERROR).json(errRes('Error saving session'));
+    }
+
+    return void res.json({ status: 'success', user });
   });
